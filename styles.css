@@ -1,0 +1,59 @@
+/* =============
+  Elements
+================ */
+
+body {
+  background-color: #e7e7e7;
+  color: #202020;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* =============
+  Classes
+================ */
+
+
+
+
+
+/* =============
+  ID's
+================ */    
+
+#title {
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 2rem;
+}
+
+#search {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+#search-icon {
+  font-size: 5rem;
+  cursor: pointer;
+  color: #3a3a3a;
+  padding-bottom: 2rem;
+}
+
+#search-bar {
+  display: none;
+}
+
+#random {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+
+
+
+
+
+
