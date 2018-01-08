@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,89 +11,98 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
 
-  <div id="main-div" class="container">
+  <div id="wrapper" class="container">
 
     <header>
       <h1 id="title">Wikipedia Viewer</h1>
     </header>
 
     <main>
-
       <div id="random" class="container">
         <h4>Feeling Lucky?</h4>
         <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click me for a random article</a>
       </div> 
-      
+
       <div id="search" class="container">
-        <i id="search-icon" class="fas fa-search"></i>
-        <h4 id="search-icon-description">Click icon to search</h4>
-        <form id="search-bar">
-          <input id="search-input" type="text" name="search" placeholder="Search Me">
+        <span id="search-icon">
+          <i class="fas fa-search icon"></i>
+        </span>
+        <form id="search-form">
+          <input id="search-input" type="text" name="search" placeholder="Search..">
         </form>
-        <ul id="article-list" type="none">
-          <a class="article-link" target="_blank">
-            <li id="article-one">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-two">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-three">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-four">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-five">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-six">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-seven">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-eight">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-nine">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-          <a class="article-link" target="_blank">
-            <li id="article-ten">
-              <p class="article-title"></p>
-              <p class="article-description"></p>
-            </li>
-          </a>
-        </ul>
+        <span id="search-exit">
+          <i class="fas fa-times icon"></i>
+        </span>
+      </div>
+
+        <div id="articles" class="container">
+          <ul id="article-list" class="animate-bottom" type="none">
+            <a class="article-link" target="_blank">
+              <li id="article-one">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-two">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-three">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-four">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-five">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-six">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-seven">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-eight">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-nine">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+            <a class="article-link" target="_blank">
+              <li id="article-ten">
+                <p class="article-title"></p>
+                <p class="article-description"></p>
+              </li>
+            </a>
+          </ul>
+        </div>
+
       </div> 
 
     </main>

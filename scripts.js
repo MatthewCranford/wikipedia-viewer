@@ -1,7 +1,19 @@
 $(document).ready(function(){
 
 
+    
+
+
+  $("#search-exit").mousedown(function() {
+   
+    $("#article-list").css("display", "none"); 
+    $("#search-exit").css("display", "none");
+ 
+    
+  })
+
   $("#search").submit(function(event) {
+    $("#article-list").css("display", "none"); 
     var searchInput = $("#search-input").val();
     var api = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&origin=*";
     // console.log(searchInput);
@@ -18,6 +30,9 @@ $(document).ready(function(){
             console.log(jsonData[3][i]);
           });
         }
+      $("#article-list").css("display", "block"); 
+      $("#search-exit").css("display", "inline");
+   
       }  
     });
     event.preventDefault();
