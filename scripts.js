@@ -1,41 +1,44 @@
 $(document).ready(function(){
 
-
-    
-
-
-  $("#search-exit").mousedown(function() {
-   
-    $("#article-list").css("display", "none"); 
-    $("#search-exit").css("display", "none");
- 
-    
-  })
-
+  // search wiki articles using user's search input and populate them to the page
   $("#search").submit(function(event) {
-    $("#article-list").css("display", "none"); 
+    $("header").css("display", "none"); // transition header out
+    $("#article-list").css("display", "none"); // reset article list for fade in on multiple searches
     var searchInput = $("#search-input").val();
-    var api = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&origin=*";
-    // console.log(searchInput);
-    // console.log(api);
+    var apiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&origin=*";
     $.ajax({
-      url: api,
+      url: apiUrl,
       type: "GET",
       success: function(jsonData) {
-        for(i=0; i<jsonData[1].length; i++) {
+        for(i=0; i<jsonData[1].length; i++) {  
           $("#article-list li").each(function(i){
             $(this).children(".article-title").html(jsonData[1][i]);
             $(this).children(".article-description").html(jsonData[2][i]);
             $(this).parent(".article-link").attr("href", jsonData[3][i]);
-            console.log(jsonData[3][i]);
           });
         }
-      $("#article-list").css("display", "block"); 
-      $("#search-exit").css("display", "inline");
-   
+      $("#article-list").css("display", "block"); // fade in article list
+      $("#search-exit").css("display", "inline"); // display exit icon
+      },
+      error: function(errorMessage){
+        console.log("error");
       }  
     });
     event.preventDefault();
+  });
+
+  // exit articles and reset to default
+  $("#search-exit").mousedown(function() {
+    $("#article-list, #search-exit").css("display", "none"); 
+    $("header").css("display", "block");
+    $("#search-input").val("")
+  });
+
+  // Call to action message change on hover and reset off hover
+  $("#random-article").hover(function() {
+    $("#random-cta").html("May the Wiki be with you..");
+  }, function() {
+    $("#random-cta").html("Feeling Lucky?");
   });
 
 });

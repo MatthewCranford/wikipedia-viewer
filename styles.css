@@ -3,9 +3,13 @@
 ================ */
 
 body {
-  background-color: #e7e7e7;
-  color: #202020;
+  background-color: #f3f3f3;
+  color: #2a2a2c;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  transition: all 4s ease-in-out ;
 }
 
 a:hover {
@@ -39,6 +43,27 @@ a:hover {
     to{ bottom:0; opacity:1 }
   }
 
+.animate-top {
+  position: relative;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 1s;
+  animation-name: animatetop;
+  animation-duration: 1s;
+}
+  
+  @-webkit-keyframes animatetop {
+    from { top:-100px; opacity:0 } 
+    to { top:0px; opacity:1 }
+  }   
+  
+  @keyframes animatetop { 
+    from{ top:-100px; opacity:0 } 
+    to{ top:0; opacity:1 }
+  }
+
+.article-title {
+  font-weight: 800;
+}
 
 /* =============
   ID's
@@ -49,13 +74,35 @@ a:hover {
 }
 
 #title {
-  font-size: 5rem;
+  font-size: 4.5rem;
   padding-top: 2rem;
+  text-shadow: .5px .5px 2px #3a3a3a;
+  color: #2a2a2c;
 }
 
 #random {
+  
   margin-top: 3rem;
 }
+
+#random-cta {
+  font-size: 1.7rem;
+}
+
+#random-article {
+  font-size: 1.25rem;
+  color: #747f9c;
+  transition: font-size .2s ease-in-out;
+}
+
+  #random-article:hover {
+    font-size: 2rem;
+    filter: brightness(75%);
+  }
+
+  #random-article:active {
+    filter: brightness(50%);
+  }
 
 #search {
   margin-top: 3rem;
@@ -76,6 +123,15 @@ a:hover {
   display: none;
 }
 
+#search-exit-icon {
+  transition: all .2s;
+}
+
+  #search-exit-icon:hover {
+    font-size: 3em;
+    margin-top: -.35rem;
+  }
+
 #search-form {
   display: inline;
 }
@@ -87,33 +143,132 @@ a:hover {
   transition: width 0.4s ease-in-out;
   border-style: solid;
   padding: 20px;
+  color: #2a2a2c;
 }
 
   #search-input:focus {
-    width: 80%;
+    width: 75%;
     outline: 0;
-    box-shadow: 0 0 1px 2px #767e88;
+    box-shadow: 0 0 1px 2px #464444;
   }
 
 #article-list {
   padding-left: 0;
-  padding-top: 1rem;
+  padding-top: 2rem;
   display: none;
 }
 
-  #article-list li {
-    text-align: left;
-    border: solid 2px rgb(5, 5, 5);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 20px;
-    background-color: white;
-    color: black;
+#article-list li {
+  text-align: left;
+  border: solid 2px #2a2a2c;;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: white;
+  color: #2a2a2c;
+  transition: margin .15s ease-in-out;
+}
+
+  #article-list li:hover {
+   margin: 0rem;
+   font-size: 1.50rem;
+   border-left: 10px solid;
+   
   }
 
+/* =============
+  Media Queries
+================ */  
 
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap */
 
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
 
+  #title {
+    font-size: 4rem;
+  }
+
+  #random-cta {
+    font-size: 2rem;
+  } 
+
+  #random-article {
+    font-size: 1.5rem;
+  }
+
+    #random-article:hover {
+      font-size: 2.25rem;
+    }
+
+  #search {
+    margin-top: 2rem;
+  }
+ }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+  #title {
+    font-size: 5rem;
+  }
+
+  #random-cta {
+    font-size: 2.5rem;
+  } 
+
+  #random-article {
+    font-size: 1.5rem;
+  }
+
+    #random-article:hover {
+      font-size: 2.5rem;
+    }
+
+  #search {
+    margin-top: 3rem;
+  }
+
+    #search-input:focus {
+      width: 50%;
+      outline: 0;
+      box-shadow: 0 0 1px 2px #464444;
+    }
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+  #title {
+    font-size: 5rem;
+  }
+
+  #random-cta {
+    font-size: 1.75rem;
+  } 
+
+  #random-article {
+    font-size: 1.25rem;
+  }
+
+    #random-article:hover {
+      font-size: 2rem;
+    }
+
+  #search {
+    margin-top: 3rem;
+  }
+
+  #search-input:focus {
+    width: 35%;
+    outline: 0;
+    box-shadow: 0 0 1px 2px #464444;
+  }
+ }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
 
 
 
