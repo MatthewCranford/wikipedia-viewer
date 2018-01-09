@@ -4,6 +4,7 @@ $(document).ready(function(){
   $("#search").submit(function(event) {
     $("header").css("display", "none"); // transition header out
     $("#article-list").css("display", "none"); // reset article list for fade in on multiple searches
+    $("footer").css("position", "relative"); // sets footer to bottom of articles
     var searchInput = $("#search-input").val();
     var apiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&origin=*";
     $.ajax({
@@ -31,6 +32,7 @@ $(document).ready(function(){
   $("#search-exit").mousedown(function() {
     $("#article-list, #search-exit").css("display", "none"); 
     $("header").css("display", "block");
+    $("footer").css("position", "absolute");
     $("#search-input").val("")
   });
 
